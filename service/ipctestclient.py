@@ -14,11 +14,12 @@ while True:
     socks = dict(poller.poll())
 
     if socket in socks and socks[socket] == zmq.POLLIN:
-        msg = socket.recv_string()
+        msg = socket.recv()
 
         cmd = homeControl_pb2.DimmerCommand()
-        cmd.parseFromString(msg)
-
+        cmd.ParseFromString(msg)
+	
+        print("Dimmer Command CH:% LV:%", cmd.channel, cmd.level)
 
         socket.send_string("Send from iptestclient.py")
 

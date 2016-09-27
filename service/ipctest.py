@@ -17,10 +17,10 @@ while True:
         level = 0
 
     cmd = homeControl_pb2.DimmerCommand()
-    cmd.id = id
+    cmd.channel = id
     cmd.level = level
 
-    socket.send_string(cmd.SerializeToString())
+    socket.send(cmd.SerializeToString())
     msg = socket.recv_string()
     print(msg)
     time.sleep(1)
