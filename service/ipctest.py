@@ -1,13 +1,26 @@
 import zmq
 import time
+import homeControl_pb2
 
 context = zmq.Context();
 socket = context.socket(zmq.PAIR);
 
 socket.bind("tcp://*:19000")
 
+id = 0
+level = 0
+
 while True:
-    socket.send_string("Send from iptest.py")
+    level += 1
+    if level == 10:
+        id += 1
+        level = 0
+
+    cmd = homeControl_pb2.DimmerCommand()
+    cmd.id = id
+    cmd.level = level
+
+    socket.send_string(cmd.SerializeToString())
     msg = socket.recv_string()
     print(msg)
     time.sleep(1)

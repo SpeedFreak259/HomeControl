@@ -1,5 +1,6 @@
 import zmq
 import time
+import homeControl_pb2
 
 context = zmq.Context();
 socket = context.socket(zmq.PAIR);
@@ -14,7 +15,11 @@ while True:
 
     if socket in socks and socks[socket] == zmq.POLLIN:
         msg = socket.recv_string()
-        print(msg)
+
+        cmd = homeControl_pb2.DimmerCommand()
+        cmd.parseFromString(msg)
+
+
         socket.send_string("Send from iptestclient.py")
 
     time.sleep(1)
