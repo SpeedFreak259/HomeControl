@@ -123,6 +123,33 @@ ZmqProject/fast:
 	$(MAKE) -f CMakeFiles/ZmqProject.dir/build.make CMakeFiles/ZmqProject.dir/build
 .PHONY : ZmqProject/fast
 
+homeControl.pb.o: homeControl.pb.cc.o
+
+.PHONY : homeControl.pb.o
+
+# target to build an object file
+homeControl.pb.cc.o:
+	$(MAKE) -f CMakeFiles/ZmqProject.dir/build.make CMakeFiles/ZmqProject.dir/homeControl.pb.cc.o
+.PHONY : homeControl.pb.cc.o
+
+homeControl.pb.i: homeControl.pb.cc.i
+
+.PHONY : homeControl.pb.i
+
+# target to preprocess a source file
+homeControl.pb.cc.i:
+	$(MAKE) -f CMakeFiles/ZmqProject.dir/build.make CMakeFiles/ZmqProject.dir/homeControl.pb.cc.i
+.PHONY : homeControl.pb.cc.i
+
+homeControl.pb.s: homeControl.pb.cc.s
+
+.PHONY : homeControl.pb.s
+
+# target to generate assembly for a file
+homeControl.pb.cc.s:
+	$(MAKE) -f CMakeFiles/ZmqProject.dir/build.make CMakeFiles/ZmqProject.dir/homeControl.pb.cc.s
+.PHONY : homeControl.pb.cc.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ZmqProject"
+	@echo "... homeControl.pb.o"
+	@echo "... homeControl.pb.i"
+	@echo "... homeControl.pb.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

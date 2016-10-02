@@ -1,12 +1,9 @@
-#include <zmq.h>
-#include "homeControl.pb.h"
+#include <zmq.hpp>
+#include <iostream>
+#include <unistd.h>
 
-int main(void){
-  void *context = zmq_ctx_new();
-  void *socket = zmq_socket(context. ZMQ_PAIR);
+int main(){
+    zmq::context_t context(1);
 
-  socket.bind("tcp://*:19000");
-
-  zmq_close(socket);
-  zmq_ctx_destroy(context);
+    return 0;
 }

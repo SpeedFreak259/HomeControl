@@ -1,0 +1,3 @@
+/home/pi/HomeControl/spikes/protobuf/cpp/bin/CMakeFiles/edit_cache.dir
+/home/pi/HomeControl/spikes/protobuf/cpp/bin/CMakeFiles/rebuild_cache.dir
+/home/pi/HomeControl/spikes/protobuf/cpp/bin/CMakeFiles/ProtobufTestProject.dir

@@ -1,0 +1,8 @@
+syntax = "proto2";
+package homeControl;
+
+message DimmerCommand {
+  required int32 channel = 1;
+  required int32 level = 2;
+  required string message = 3;
+}

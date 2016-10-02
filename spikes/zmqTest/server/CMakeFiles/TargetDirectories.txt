@@ -1,0 +1,3 @@
+/home/pi/HomeControl/spikes/zmqTest/server/CMakeFiles/edit_cache.dir
+/home/pi/HomeControl/spikes/zmqTest/server/CMakeFiles/rebuild_cache.dir
+/home/pi/HomeControl/spikes/zmqTest/server/CMakeFiles/ZmqProject.dir
