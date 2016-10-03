@@ -1,7 +1,61 @@
-syntax = "proto2";
+syntax = "proto3";
 package homeControl;
 
+// Commands
+message HomeControlCommand{
+  oneof command {
+    DimmerCommand dimmerCommand = 1;
+    SwitchCommand switchCommand = 2;
+    StatusRequestCommand statusRequestCommand = 3;
+  }
+}
+
 message DimmerCommand {
-  required int32 channel = 1;
-  required int32 level = 2;
+  int32 channel = 1;
+  int32 level = 2;
+}
+
+message SwitchCommand {
+  int32 channel = 1;
+  bool state = 2;
+}
+
+message StatusRequestCommand {
+    enum StatusType {
+        NONE = 0;
+        FULL = 1;
+    }
+
+    StatusType statusType = 1;
+}
+
+// Status
+message HomeControlStatus{
+  ElectricalStatus electrical = 1;
+  repeated SwitchStatus outputs = 2;
+  repeated SwitchStatus inputs = 3;
+  repeated DimmerStatus dimmers = 4;
+  repeated TemperatureStatus temperatures = 5;
+  uint64 uptime = 6;
+}
+
+message ElectricalStatus {
+  double volts = 1;
+  double amps = 2;
+}
+
+message SwitchStatus {
+  int32 channel = 1;
+  bool state = 2;
+}
+
+message DimmerStatus {
+  int32 channel = 1;
+  int32 demandLevel = 2;
+  int32 actualLevel = 3;
+}
+
+message TemperatureStatus {
+  int32 channel = 1;
+  int32 TemperatureC00 = 2;
 }

@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -20,35 +21,203 @@ namespace homeControl {
 
 namespace {
 
+const ::google::protobuf::Descriptor* HomeControlCommand_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  HomeControlCommand_reflection_ = NULL;
+struct HomeControlCommandOneofInstance {
+  const ::homeControl::DimmerCommand* dimmercommand_;
+  const ::homeControl::SwitchCommand* switchcommand_;
+  const ::homeControl::StatusRequestCommand* statusrequestcommand_;
+}* HomeControlCommand_default_oneof_instance_ = NULL;
 const ::google::protobuf::Descriptor* DimmerCommand_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   DimmerCommand_reflection_ = NULL;
+const ::google::protobuf::Descriptor* SwitchCommand_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  SwitchCommand_reflection_ = NULL;
+const ::google::protobuf::Descriptor* StatusRequestCommand_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  StatusRequestCommand_reflection_ = NULL;
+const ::google::protobuf::EnumDescriptor* StatusRequestCommand_StatusType_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* HomeControlStatus_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  HomeControlStatus_reflection_ = NULL;
+const ::google::protobuf::Descriptor* ElectricalStatus_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  ElectricalStatus_reflection_ = NULL;
+const ::google::protobuf::Descriptor* SwitchStatus_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  SwitchStatus_reflection_ = NULL;
+const ::google::protobuf::Descriptor* DimmerStatus_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  DimmerStatus_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TemperatureStatus_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TemperatureStatus_reflection_ = NULL;
 
 }  // namespace
 
 
+void protobuf_AssignDesc_homeControl_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_homeControl_2eproto() {
   protobuf_AddDesc_homeControl_2eproto();
   const ::google::protobuf::FileDescriptor* file =
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "homeControl.proto");
   GOOGLE_CHECK(file != NULL);
-  DimmerCommand_descriptor_ = file->message_type(0);
+  HomeControlCommand_descriptor_ = file->message_type(0);
+  static const int HomeControlCommand_offsets_[4] = {
+    PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET(HomeControlCommand_default_oneof_instance_, dimmercommand_),
+    PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET(HomeControlCommand_default_oneof_instance_, switchcommand_),
+    PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET(HomeControlCommand_default_oneof_instance_, statusrequestcommand_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlCommand, command_),
+  };
+  HomeControlCommand_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      HomeControlCommand_descriptor_,
+      HomeControlCommand::default_instance_,
+      HomeControlCommand_offsets_,
+      -1,
+      -1,
+      -1,
+      HomeControlCommand_default_oneof_instance_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlCommand, _oneof_case_[0]),
+      sizeof(HomeControlCommand),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlCommand, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlCommand, _is_default_instance_));
+  DimmerCommand_descriptor_ = file->message_type(1);
   static const int DimmerCommand_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerCommand, channel_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerCommand, level_),
   };
   DimmerCommand_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       DimmerCommand_descriptor_,
       DimmerCommand::default_instance_,
       DimmerCommand_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerCommand, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerCommand, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(DimmerCommand));
+      -1,
+      -1,
+      sizeof(DimmerCommand),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerCommand, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerCommand, _is_default_instance_));
+  SwitchCommand_descriptor_ = file->message_type(2);
+  static const int SwitchCommand_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SwitchCommand, channel_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SwitchCommand, state_),
+  };
+  SwitchCommand_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      SwitchCommand_descriptor_,
+      SwitchCommand::default_instance_,
+      SwitchCommand_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(SwitchCommand),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SwitchCommand, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SwitchCommand, _is_default_instance_));
+  StatusRequestCommand_descriptor_ = file->message_type(3);
+  static const int StatusRequestCommand_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusRequestCommand, statustype_),
+  };
+  StatusRequestCommand_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      StatusRequestCommand_descriptor_,
+      StatusRequestCommand::default_instance_,
+      StatusRequestCommand_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(StatusRequestCommand),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusRequestCommand, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusRequestCommand, _is_default_instance_));
+  StatusRequestCommand_StatusType_descriptor_ = StatusRequestCommand_descriptor_->enum_type(0);
+  HomeControlStatus_descriptor_ = file->message_type(4);
+  static const int HomeControlStatus_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlStatus, electrical_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlStatus, outputs_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlStatus, inputs_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlStatus, dimmers_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlStatus, temperatures_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlStatus, uptime_),
+  };
+  HomeControlStatus_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      HomeControlStatus_descriptor_,
+      HomeControlStatus::default_instance_,
+      HomeControlStatus_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(HomeControlStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlStatus, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HomeControlStatus, _is_default_instance_));
+  ElectricalStatus_descriptor_ = file->message_type(5);
+  static const int ElectricalStatus_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ElectricalStatus, volts_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ElectricalStatus, amps_),
+  };
+  ElectricalStatus_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      ElectricalStatus_descriptor_,
+      ElectricalStatus::default_instance_,
+      ElectricalStatus_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(ElectricalStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ElectricalStatus, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ElectricalStatus, _is_default_instance_));
+  SwitchStatus_descriptor_ = file->message_type(6);
+  static const int SwitchStatus_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SwitchStatus, channel_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SwitchStatus, state_),
+  };
+  SwitchStatus_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      SwitchStatus_descriptor_,
+      SwitchStatus::default_instance_,
+      SwitchStatus_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(SwitchStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SwitchStatus, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SwitchStatus, _is_default_instance_));
+  DimmerStatus_descriptor_ = file->message_type(7);
+  static const int DimmerStatus_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerStatus, channel_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerStatus, demandlevel_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerStatus, actuallevel_),
+  };
+  DimmerStatus_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      DimmerStatus_descriptor_,
+      DimmerStatus::default_instance_,
+      DimmerStatus_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(DimmerStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerStatus, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DimmerStatus, _is_default_instance_));
+  TemperatureStatus_descriptor_ = file->message_type(8);
+  static const int TemperatureStatus_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemperatureStatus, channel_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemperatureStatus, temperaturec00_),
+  };
+  TemperatureStatus_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      TemperatureStatus_descriptor_,
+      TemperatureStatus::default_instance_,
+      TemperatureStatus_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(TemperatureStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemperatureStatus, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemperatureStatus, _is_default_instance_));
 }
 
 namespace {
@@ -59,19 +228,54 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_homeControl_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    DimmerCommand_descriptor_, &DimmerCommand::default_instance());
+      HomeControlCommand_descriptor_, &HomeControlCommand::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      DimmerCommand_descriptor_, &DimmerCommand::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      SwitchCommand_descriptor_, &SwitchCommand::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      StatusRequestCommand_descriptor_, &StatusRequestCommand::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      HomeControlStatus_descriptor_, &HomeControlStatus::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      ElectricalStatus_descriptor_, &ElectricalStatus::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      SwitchStatus_descriptor_, &SwitchStatus::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      DimmerStatus_descriptor_, &DimmerStatus::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      TemperatureStatus_descriptor_, &TemperatureStatus::default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_homeControl_2eproto() {
+  delete HomeControlCommand::default_instance_;
+  delete HomeControlCommand_default_oneof_instance_;
+  delete HomeControlCommand_reflection_;
   delete DimmerCommand::default_instance_;
   delete DimmerCommand_reflection_;
+  delete SwitchCommand::default_instance_;
+  delete SwitchCommand_reflection_;
+  delete StatusRequestCommand::default_instance_;
+  delete StatusRequestCommand_reflection_;
+  delete HomeControlStatus::default_instance_;
+  delete HomeControlStatus_reflection_;
+  delete ElectricalStatus::default_instance_;
+  delete ElectricalStatus_reflection_;
+  delete SwitchStatus::default_instance_;
+  delete SwitchStatus_reflection_;
+  delete DimmerStatus::default_instance_;
+  delete DimmerStatus_reflection_;
+  delete TemperatureStatus::default_instance_;
+  delete TemperatureStatus_reflection_;
 }
 
+void protobuf_AddDesc_homeControl_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_homeControl_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -79,13 +283,52 @@ void protobuf_AddDesc_homeControl_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\021homeControl.proto\022\013homeControl\"/\n\rDimm"
-    "erCommand\022\017\n\007channel\030\001 \002(\005\022\r\n\005level\030\002 \002("
-    "\005", 81);
+    "\n\021homeControl.proto\022\013homeControl\"\314\001\n\022Hom"
+    "eControlCommand\0223\n\rdimmerCommand\030\001 \001(\0132\032"
+    ".homeControl.DimmerCommandH\000\0223\n\rswitchCo"
+    "mmand\030\002 \001(\0132\032.homeControl.SwitchCommandH"
+    "\000\022A\n\024statusRequestCommand\030\003 \001(\0132!.homeCo"
+    "ntrol.StatusRequestCommandH\000B\t\n\007command\""
+    "/\n\rDimmerCommand\022\017\n\007channel\030\001 \001(\005\022\r\n\005lev"
+    "el\030\002 \001(\005\"/\n\rSwitchCommand\022\017\n\007channel\030\001 \001"
+    "(\005\022\r\n\005state\030\002 \001(\010\"z\n\024StatusRequestComman"
+    "d\022@\n\nstatusType\030\001 \001(\0162,.homeControl.Stat"
+    "usRequestCommand.StatusType\" \n\nStatusTyp"
+    "e\022\010\n\004NONE\020\000\022\010\n\004FULL\020\001\"\217\002\n\021HomeControlSta"
+    "tus\0221\n\nelectrical\030\001 \001(\0132\035.homeControl.El"
+    "ectricalStatus\022*\n\007outputs\030\002 \003(\0132\031.homeCo"
+    "ntrol.SwitchStatus\022)\n\006inputs\030\003 \003(\0132\031.hom"
+    "eControl.SwitchStatus\022*\n\007dimmers\030\004 \003(\0132\031"
+    ".homeControl.DimmerStatus\0224\n\014temperature"
+    "s\030\005 \003(\0132\036.homeControl.TemperatureStatus\022"
+    "\016\n\006uptime\030\006 \001(\004\"/\n\020ElectricalStatus\022\r\n\005v"
+    "olts\030\001 \001(\001\022\014\n\004amps\030\002 \001(\001\".\n\014SwitchStatus"
+    "\022\017\n\007channel\030\001 \001(\005\022\r\n\005state\030\002 \001(\010\"I\n\014Dimm"
+    "erStatus\022\017\n\007channel\030\001 \001(\005\022\023\n\013demandLevel"
+    "\030\002 \001(\005\022\023\n\013actualLevel\030\003 \001(\005\"<\n\021Temperatu"
+    "reStatus\022\017\n\007channel\030\001 \001(\005\022\026\n\016Temperature"
+    "C00\030\002 \001(\005b\006proto3", 977);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "homeControl.proto", &protobuf_RegisterTypes);
+  HomeControlCommand::default_instance_ = new HomeControlCommand();
+  HomeControlCommand_default_oneof_instance_ = new HomeControlCommandOneofInstance();
   DimmerCommand::default_instance_ = new DimmerCommand();
+  SwitchCommand::default_instance_ = new SwitchCommand();
+  StatusRequestCommand::default_instance_ = new StatusRequestCommand();
+  HomeControlStatus::default_instance_ = new HomeControlStatus();
+  ElectricalStatus::default_instance_ = new ElectricalStatus();
+  SwitchStatus::default_instance_ = new SwitchStatus();
+  DimmerStatus::default_instance_ = new DimmerStatus();
+  TemperatureStatus::default_instance_ = new TemperatureStatus();
+  HomeControlCommand::default_instance_->InitAsDefaultInstance();
   DimmerCommand::default_instance_->InitAsDefaultInstance();
+  SwitchCommand::default_instance_->InitAsDefaultInstance();
+  StatusRequestCommand::default_instance_->InitAsDefaultInstance();
+  HomeControlStatus::default_instance_->InitAsDefaultInstance();
+  ElectricalStatus::default_instance_->InitAsDefaultInstance();
+  SwitchStatus::default_instance_->InitAsDefaultInstance();
+  DimmerStatus::default_instance_->InitAsDefaultInstance();
+  TemperatureStatus::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_homeControl_2eproto);
 }
 
@@ -98,32 +341,529 @@ struct StaticDescriptorInitializer_homeControl_2eproto {
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int HomeControlCommand::kDimmerCommandFieldNumber;
+const int HomeControlCommand::kSwitchCommandFieldNumber;
+const int HomeControlCommand::kStatusRequestCommandFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+HomeControlCommand::HomeControlCommand()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:homeControl.HomeControlCommand)
+}
+
+void HomeControlCommand::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+  HomeControlCommand_default_oneof_instance_->dimmercommand_ = const_cast< ::homeControl::DimmerCommand*>(&::homeControl::DimmerCommand::default_instance());
+  HomeControlCommand_default_oneof_instance_->switchcommand_ = const_cast< ::homeControl::SwitchCommand*>(&::homeControl::SwitchCommand::default_instance());
+  HomeControlCommand_default_oneof_instance_->statusrequestcommand_ = const_cast< ::homeControl::StatusRequestCommand*>(&::homeControl::StatusRequestCommand::default_instance());
+}
+
+HomeControlCommand::HomeControlCommand(const HomeControlCommand& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:homeControl.HomeControlCommand)
+}
+
+void HomeControlCommand::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  clear_has_command();
+}
+
+HomeControlCommand::~HomeControlCommand() {
+  // @@protoc_insertion_point(destructor:homeControl.HomeControlCommand)
+  SharedDtor();
+}
+
+void HomeControlCommand::SharedDtor() {
+  if (has_command()) {
+    clear_command();
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void HomeControlCommand::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* HomeControlCommand::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return HomeControlCommand_descriptor_;
+}
+
+const HomeControlCommand& HomeControlCommand::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_homeControl_2eproto();
+  return *default_instance_;
+}
+
+HomeControlCommand* HomeControlCommand::default_instance_ = NULL;
+
+HomeControlCommand* HomeControlCommand::New(::google::protobuf::Arena* arena) const {
+  HomeControlCommand* n = new HomeControlCommand;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void HomeControlCommand::clear_command() {
+// @@protoc_insertion_point(one_of_clear_start:homeControl.HomeControlCommand)
+  switch(command_case()) {
+    case kDimmerCommand: {
+      delete command_.dimmercommand_;
+      break;
+    }
+    case kSwitchCommand: {
+      delete command_.switchcommand_;
+      break;
+    }
+    case kStatusRequestCommand: {
+      delete command_.statusrequestcommand_;
+      break;
+    }
+    case COMMAND_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = COMMAND_NOT_SET;
+}
+
+
+void HomeControlCommand::Clear() {
+// @@protoc_insertion_point(message_clear_start:homeControl.HomeControlCommand)
+  clear_command();
+}
+
+bool HomeControlCommand::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:homeControl.HomeControlCommand)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .homeControl.DimmerCommand dimmerCommand = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_dimmercommand()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_switchCommand;
+        break;
+      }
+
+      // optional .homeControl.SwitchCommand switchCommand = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_switchCommand:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_switchcommand()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_statusRequestCommand;
+        break;
+      }
+
+      // optional .homeControl.StatusRequestCommand statusRequestCommand = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_statusRequestCommand:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_statusrequestcommand()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:homeControl.HomeControlCommand)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:homeControl.HomeControlCommand)
+  return false;
+#undef DO_
+}
+
+void HomeControlCommand::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:homeControl.HomeControlCommand)
+  // optional .homeControl.DimmerCommand dimmerCommand = 1;
+  if (has_dimmercommand()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *command_.dimmercommand_, output);
+  }
+
+  // optional .homeControl.SwitchCommand switchCommand = 2;
+  if (has_switchcommand()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *command_.switchcommand_, output);
+  }
+
+  // optional .homeControl.StatusRequestCommand statusRequestCommand = 3;
+  if (has_statusrequestcommand()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, *command_.statusrequestcommand_, output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:homeControl.HomeControlCommand)
+}
+
+::google::protobuf::uint8* HomeControlCommand::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:homeControl.HomeControlCommand)
+  // optional .homeControl.DimmerCommand dimmerCommand = 1;
+  if (has_dimmercommand()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, *command_.dimmercommand_, false, target);
+  }
+
+  // optional .homeControl.SwitchCommand switchCommand = 2;
+  if (has_switchcommand()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, *command_.switchcommand_, false, target);
+  }
+
+  // optional .homeControl.StatusRequestCommand statusRequestCommand = 3;
+  if (has_statusrequestcommand()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        3, *command_.statusrequestcommand_, false, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:homeControl.HomeControlCommand)
+  return target;
+}
+
+int HomeControlCommand::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.HomeControlCommand)
+  int total_size = 0;
+
+  switch (command_case()) {
+    // optional .homeControl.DimmerCommand dimmerCommand = 1;
+    case kDimmerCommand: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          *command_.dimmercommand_);
+      break;
+    }
+    // optional .homeControl.SwitchCommand switchCommand = 2;
+    case kSwitchCommand: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          *command_.switchcommand_);
+      break;
+    }
+    // optional .homeControl.StatusRequestCommand statusRequestCommand = 3;
+    case kStatusRequestCommand: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          *command_.statusrequestcommand_);
+      break;
+    }
+    case COMMAND_NOT_SET: {
+      break;
+    }
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void HomeControlCommand::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.HomeControlCommand)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const HomeControlCommand* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const HomeControlCommand>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.HomeControlCommand)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.HomeControlCommand)
+    MergeFrom(*source);
+  }
+}
+
+void HomeControlCommand::MergeFrom(const HomeControlCommand& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.HomeControlCommand)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  switch (from.command_case()) {
+    case kDimmerCommand: {
+      mutable_dimmercommand()->::homeControl::DimmerCommand::MergeFrom(from.dimmercommand());
+      break;
+    }
+    case kSwitchCommand: {
+      mutable_switchcommand()->::homeControl::SwitchCommand::MergeFrom(from.switchcommand());
+      break;
+    }
+    case kStatusRequestCommand: {
+      mutable_statusrequestcommand()->::homeControl::StatusRequestCommand::MergeFrom(from.statusrequestcommand());
+      break;
+    }
+    case COMMAND_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void HomeControlCommand::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.HomeControlCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void HomeControlCommand::CopyFrom(const HomeControlCommand& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.HomeControlCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HomeControlCommand::IsInitialized() const {
+
+  return true;
+}
+
+void HomeControlCommand::Swap(HomeControlCommand* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void HomeControlCommand::InternalSwap(HomeControlCommand* other) {
+  std::swap(command_, other->command_);
+  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata HomeControlCommand::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = HomeControlCommand_descriptor_;
+  metadata.reflection = HomeControlCommand_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// HomeControlCommand
+
+// optional .homeControl.DimmerCommand dimmerCommand = 1;
+bool HomeControlCommand::has_dimmercommand() const {
+  return command_case() == kDimmerCommand;
+}
+void HomeControlCommand::set_has_dimmercommand() {
+  _oneof_case_[0] = kDimmerCommand;
+}
+void HomeControlCommand::clear_dimmercommand() {
+  if (has_dimmercommand()) {
+    delete command_.dimmercommand_;
+    clear_has_command();
+  }
+}
+ const ::homeControl::DimmerCommand& HomeControlCommand::dimmercommand() const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlCommand.dimmerCommand)
+  return has_dimmercommand()
+      ? *command_.dimmercommand_
+      : ::homeControl::DimmerCommand::default_instance();
+}
+::homeControl::DimmerCommand* HomeControlCommand::mutable_dimmercommand() {
+  if (!has_dimmercommand()) {
+    clear_command();
+    set_has_dimmercommand();
+    command_.dimmercommand_ = new ::homeControl::DimmerCommand;
+  }
+  // @@protoc_insertion_point(field_mutable:homeControl.HomeControlCommand.dimmerCommand)
+  return command_.dimmercommand_;
+}
+::homeControl::DimmerCommand* HomeControlCommand::release_dimmercommand() {
+  // @@protoc_insertion_point(field_release:homeControl.HomeControlCommand.dimmerCommand)
+  if (has_dimmercommand()) {
+    clear_has_command();
+    ::homeControl::DimmerCommand* temp = command_.dimmercommand_;
+    command_.dimmercommand_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void HomeControlCommand::set_allocated_dimmercommand(::homeControl::DimmerCommand* dimmercommand) {
+  clear_command();
+  if (dimmercommand) {
+    set_has_dimmercommand();
+    command_.dimmercommand_ = dimmercommand;
+  }
+  // @@protoc_insertion_point(field_set_allocated:homeControl.HomeControlCommand.dimmerCommand)
+}
+
+// optional .homeControl.SwitchCommand switchCommand = 2;
+bool HomeControlCommand::has_switchcommand() const {
+  return command_case() == kSwitchCommand;
+}
+void HomeControlCommand::set_has_switchcommand() {
+  _oneof_case_[0] = kSwitchCommand;
+}
+void HomeControlCommand::clear_switchcommand() {
+  if (has_switchcommand()) {
+    delete command_.switchcommand_;
+    clear_has_command();
+  }
+}
+ const ::homeControl::SwitchCommand& HomeControlCommand::switchcommand() const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlCommand.switchCommand)
+  return has_switchcommand()
+      ? *command_.switchcommand_
+      : ::homeControl::SwitchCommand::default_instance();
+}
+::homeControl::SwitchCommand* HomeControlCommand::mutable_switchcommand() {
+  if (!has_switchcommand()) {
+    clear_command();
+    set_has_switchcommand();
+    command_.switchcommand_ = new ::homeControl::SwitchCommand;
+  }
+  // @@protoc_insertion_point(field_mutable:homeControl.HomeControlCommand.switchCommand)
+  return command_.switchcommand_;
+}
+::homeControl::SwitchCommand* HomeControlCommand::release_switchcommand() {
+  // @@protoc_insertion_point(field_release:homeControl.HomeControlCommand.switchCommand)
+  if (has_switchcommand()) {
+    clear_has_command();
+    ::homeControl::SwitchCommand* temp = command_.switchcommand_;
+    command_.switchcommand_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void HomeControlCommand::set_allocated_switchcommand(::homeControl::SwitchCommand* switchcommand) {
+  clear_command();
+  if (switchcommand) {
+    set_has_switchcommand();
+    command_.switchcommand_ = switchcommand;
+  }
+  // @@protoc_insertion_point(field_set_allocated:homeControl.HomeControlCommand.switchCommand)
+}
+
+// optional .homeControl.StatusRequestCommand statusRequestCommand = 3;
+bool HomeControlCommand::has_statusrequestcommand() const {
+  return command_case() == kStatusRequestCommand;
+}
+void HomeControlCommand::set_has_statusrequestcommand() {
+  _oneof_case_[0] = kStatusRequestCommand;
+}
+void HomeControlCommand::clear_statusrequestcommand() {
+  if (has_statusrequestcommand()) {
+    delete command_.statusrequestcommand_;
+    clear_has_command();
+  }
+}
+ const ::homeControl::StatusRequestCommand& HomeControlCommand::statusrequestcommand() const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlCommand.statusRequestCommand)
+  return has_statusrequestcommand()
+      ? *command_.statusrequestcommand_
+      : ::homeControl::StatusRequestCommand::default_instance();
+}
+::homeControl::StatusRequestCommand* HomeControlCommand::mutable_statusrequestcommand() {
+  if (!has_statusrequestcommand()) {
+    clear_command();
+    set_has_statusrequestcommand();
+    command_.statusrequestcommand_ = new ::homeControl::StatusRequestCommand;
+  }
+  // @@protoc_insertion_point(field_mutable:homeControl.HomeControlCommand.statusRequestCommand)
+  return command_.statusrequestcommand_;
+}
+::homeControl::StatusRequestCommand* HomeControlCommand::release_statusrequestcommand() {
+  // @@protoc_insertion_point(field_release:homeControl.HomeControlCommand.statusRequestCommand)
+  if (has_statusrequestcommand()) {
+    clear_has_command();
+    ::homeControl::StatusRequestCommand* temp = command_.statusrequestcommand_;
+    command_.statusrequestcommand_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void HomeControlCommand::set_allocated_statusrequestcommand(::homeControl::StatusRequestCommand* statusrequestcommand) {
+  clear_command();
+  if (statusrequestcommand) {
+    set_has_statusrequestcommand();
+    command_.statusrequestcommand_ = statusrequestcommand;
+  }
+  // @@protoc_insertion_point(field_set_allocated:homeControl.HomeControlCommand.statusRequestCommand)
+}
+
+bool HomeControlCommand::has_command() const {
+  return command_case() != COMMAND_NOT_SET;
+}
+void HomeControlCommand::clear_has_command() {
+  _oneof_case_[0] = COMMAND_NOT_SET;
+}
+HomeControlCommand::CommandCase HomeControlCommand::command_case() const {
+  return HomeControlCommand::CommandCase(_oneof_case_[0]);
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int DimmerCommand::kChannelFieldNumber;
 const int DimmerCommand::kLevelFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DimmerCommand::DimmerCommand()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:homeControl.DimmerCommand)
 }
 
 void DimmerCommand::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
 }
 
 DimmerCommand::DimmerCommand(const DimmerCommand& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:homeControl.DimmerCommand)
 }
 
 void DimmerCommand::SharedCtor() {
+    _is_default_instance_ = false;
   _cached_size_ = 0;
   channel_ = 0;
   level_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 DimmerCommand::~DimmerCommand() {
@@ -153,33 +893,42 @@ const DimmerCommand& DimmerCommand::default_instance() {
 
 DimmerCommand* DimmerCommand::default_instance_ = NULL;
 
-DimmerCommand* DimmerCommand::New() const {
-  return new DimmerCommand;
+DimmerCommand* DimmerCommand::New(::google::protobuf::Arena* arena) const {
+  DimmerCommand* n = new DimmerCommand;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void DimmerCommand::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<DimmerCommand*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:homeControl.DimmerCommand)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(DimmerCommand, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<DimmerCommand*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
   ZR_(channel_, level_);
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
 }
 
 bool DimmerCommand::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:homeControl.DimmerCommand)
   for (;;) {
@@ -187,13 +936,13 @@ bool DimmerCommand::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 channel = 1;
+      // optional int32 channel = 1;
       case 1: {
         if (tag == 8) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &channel_)));
-          set_has_channel();
+
         } else {
           goto handle_unusual;
         }
@@ -201,14 +950,14 @@ bool DimmerCommand::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 level = 2;
+      // optional int32 level = 2;
       case 2: {
         if (tag == 16) {
          parse_level:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &level_)));
-          set_has_level();
+
         } else {
           goto handle_unusual;
         }
@@ -223,8 +972,7 @@ bool DimmerCommand::MergePartialFromCodedStream(
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
         break;
       }
     }
@@ -241,68 +989,54 @@ failure:
 void DimmerCommand::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:homeControl.DimmerCommand)
-  // required int32 channel = 1;
-  if (has_channel()) {
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->channel(), output);
   }
 
-  // required int32 level = 2;
-  if (has_level()) {
+  // optional int32 level = 2;
+  if (this->level() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->level(), output);
   }
 
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
   // @@protoc_insertion_point(serialize_end:homeControl.DimmerCommand)
 }
 
-::google::protobuf::uint8* DimmerCommand::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* DimmerCommand::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:homeControl.DimmerCommand)
-  // required int32 channel = 1;
-  if (has_channel()) {
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->channel(), target);
   }
 
-  // required int32 level = 2;
-  if (has_level()) {
+  // optional int32 level = 2;
+  if (this->level() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->level(), target);
   }
 
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
   // @@protoc_insertion_point(serialize_to_array_end:homeControl.DimmerCommand)
   return target;
 }
 
 int DimmerCommand::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.DimmerCommand)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required int32 channel = 1;
-    if (has_channel()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->channel());
-    }
-
-    // required int32 level = 2;
-    if (has_level()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->level());
-    }
-
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->channel());
   }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
+
+  // optional int32 level = 2;
+  if (this->level() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->level());
   }
+
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = total_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
@@ -310,56 +1044,63 @@ int DimmerCommand::ByteSize() const {
 }
 
 void DimmerCommand::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const DimmerCommand* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const DimmerCommand*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.DimmerCommand)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const DimmerCommand* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const DimmerCommand>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.DimmerCommand)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.DimmerCommand)
     MergeFrom(*source);
   }
 }
 
 void DimmerCommand::MergeFrom(const DimmerCommand& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_channel()) {
-      set_channel(from.channel());
-    }
-    if (from.has_level()) {
-      set_level(from.level());
-    }
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.DimmerCommand)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from.channel() != 0) {
+    set_channel(from.channel());
+  }
+  if (from.level() != 0) {
+    set_level(from.level());
+  }
 }
 
 void DimmerCommand::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.DimmerCommand)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DimmerCommand::CopyFrom(const DimmerCommand& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.DimmerCommand)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 bool DimmerCommand::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   return true;
 }
 
 void DimmerCommand::Swap(DimmerCommand* other) {
-  if (other != this) {
-    std::swap(channel_, other->channel_);
-    std::swap(level_, other->level_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DimmerCommand::InternalSwap(DimmerCommand* other) {
+  std::swap(channel_, other->channel_);
+  std::swap(level_, other->level_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata DimmerCommand::GetMetadata() const {
@@ -370,6 +1111,2497 @@ void DimmerCommand::Swap(DimmerCommand* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// DimmerCommand
+
+// optional int32 channel = 1;
+void DimmerCommand::clear_channel() {
+  channel_ = 0;
+}
+ ::google::protobuf::int32 DimmerCommand::channel() const {
+  // @@protoc_insertion_point(field_get:homeControl.DimmerCommand.channel)
+  return channel_;
+}
+ void DimmerCommand::set_channel(::google::protobuf::int32 value) {
+  
+  channel_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.DimmerCommand.channel)
+}
+
+// optional int32 level = 2;
+void DimmerCommand::clear_level() {
+  level_ = 0;
+}
+ ::google::protobuf::int32 DimmerCommand::level() const {
+  // @@protoc_insertion_point(field_get:homeControl.DimmerCommand.level)
+  return level_;
+}
+ void DimmerCommand::set_level(::google::protobuf::int32 value) {
+  
+  level_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.DimmerCommand.level)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SwitchCommand::kChannelFieldNumber;
+const int SwitchCommand::kStateFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SwitchCommand::SwitchCommand()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:homeControl.SwitchCommand)
+}
+
+void SwitchCommand::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+}
+
+SwitchCommand::SwitchCommand(const SwitchCommand& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:homeControl.SwitchCommand)
+}
+
+void SwitchCommand::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  channel_ = 0;
+  state_ = false;
+}
+
+SwitchCommand::~SwitchCommand() {
+  // @@protoc_insertion_point(destructor:homeControl.SwitchCommand)
+  SharedDtor();
+}
+
+void SwitchCommand::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void SwitchCommand::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* SwitchCommand::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return SwitchCommand_descriptor_;
+}
+
+const SwitchCommand& SwitchCommand::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_homeControl_2eproto();
+  return *default_instance_;
+}
+
+SwitchCommand* SwitchCommand::default_instance_ = NULL;
+
+SwitchCommand* SwitchCommand::New(::google::protobuf::Arena* arena) const {
+  SwitchCommand* n = new SwitchCommand;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void SwitchCommand::Clear() {
+// @@protoc_insertion_point(message_clear_start:homeControl.SwitchCommand)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(SwitchCommand, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<SwitchCommand*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(channel_, state_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+}
+
+bool SwitchCommand::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:homeControl.SwitchCommand)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 channel = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &channel_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_state;
+        break;
+      }
+
+      // optional bool state = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_state:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &state_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:homeControl.SwitchCommand)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:homeControl.SwitchCommand)
+  return false;
+#undef DO_
+}
+
+void SwitchCommand::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:homeControl.SwitchCommand)
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->channel(), output);
+  }
+
+  // optional bool state = 2;
+  if (this->state() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->state(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:homeControl.SwitchCommand)
+}
+
+::google::protobuf::uint8* SwitchCommand::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:homeControl.SwitchCommand)
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->channel(), target);
+  }
+
+  // optional bool state = 2;
+  if (this->state() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->state(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:homeControl.SwitchCommand)
+  return target;
+}
+
+int SwitchCommand::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.SwitchCommand)
+  int total_size = 0;
+
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->channel());
+  }
+
+  // optional bool state = 2;
+  if (this->state() != 0) {
+    total_size += 1 + 1;
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void SwitchCommand::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.SwitchCommand)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const SwitchCommand* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const SwitchCommand>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.SwitchCommand)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.SwitchCommand)
+    MergeFrom(*source);
+  }
+}
+
+void SwitchCommand::MergeFrom(const SwitchCommand& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.SwitchCommand)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  if (from.channel() != 0) {
+    set_channel(from.channel());
+  }
+  if (from.state() != 0) {
+    set_state(from.state());
+  }
+}
+
+void SwitchCommand::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.SwitchCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SwitchCommand::CopyFrom(const SwitchCommand& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.SwitchCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SwitchCommand::IsInitialized() const {
+
+  return true;
+}
+
+void SwitchCommand::Swap(SwitchCommand* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SwitchCommand::InternalSwap(SwitchCommand* other) {
+  std::swap(channel_, other->channel_);
+  std::swap(state_, other->state_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata SwitchCommand::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = SwitchCommand_descriptor_;
+  metadata.reflection = SwitchCommand_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// SwitchCommand
+
+// optional int32 channel = 1;
+void SwitchCommand::clear_channel() {
+  channel_ = 0;
+}
+ ::google::protobuf::int32 SwitchCommand::channel() const {
+  // @@protoc_insertion_point(field_get:homeControl.SwitchCommand.channel)
+  return channel_;
+}
+ void SwitchCommand::set_channel(::google::protobuf::int32 value) {
+  
+  channel_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.SwitchCommand.channel)
+}
+
+// optional bool state = 2;
+void SwitchCommand::clear_state() {
+  state_ = false;
+}
+ bool SwitchCommand::state() const {
+  // @@protoc_insertion_point(field_get:homeControl.SwitchCommand.state)
+  return state_;
+}
+ void SwitchCommand::set_state(bool value) {
+  
+  state_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.SwitchCommand.state)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+const ::google::protobuf::EnumDescriptor* StatusRequestCommand_StatusType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return StatusRequestCommand_StatusType_descriptor_;
+}
+bool StatusRequestCommand_StatusType_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const StatusRequestCommand_StatusType StatusRequestCommand::NONE;
+const StatusRequestCommand_StatusType StatusRequestCommand::FULL;
+const StatusRequestCommand_StatusType StatusRequestCommand::StatusType_MIN;
+const StatusRequestCommand_StatusType StatusRequestCommand::StatusType_MAX;
+const int StatusRequestCommand::StatusType_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int StatusRequestCommand::kStatusTypeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+StatusRequestCommand::StatusRequestCommand()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:homeControl.StatusRequestCommand)
+}
+
+void StatusRequestCommand::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+}
+
+StatusRequestCommand::StatusRequestCommand(const StatusRequestCommand& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:homeControl.StatusRequestCommand)
+}
+
+void StatusRequestCommand::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  statustype_ = 0;
+}
+
+StatusRequestCommand::~StatusRequestCommand() {
+  // @@protoc_insertion_point(destructor:homeControl.StatusRequestCommand)
+  SharedDtor();
+}
+
+void StatusRequestCommand::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void StatusRequestCommand::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* StatusRequestCommand::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return StatusRequestCommand_descriptor_;
+}
+
+const StatusRequestCommand& StatusRequestCommand::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_homeControl_2eproto();
+  return *default_instance_;
+}
+
+StatusRequestCommand* StatusRequestCommand::default_instance_ = NULL;
+
+StatusRequestCommand* StatusRequestCommand::New(::google::protobuf::Arena* arena) const {
+  StatusRequestCommand* n = new StatusRequestCommand;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void StatusRequestCommand::Clear() {
+// @@protoc_insertion_point(message_clear_start:homeControl.StatusRequestCommand)
+  statustype_ = 0;
+}
+
+bool StatusRequestCommand::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:homeControl.StatusRequestCommand)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .homeControl.StatusRequestCommand.StatusType statusType = 1;
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_statustype(static_cast< ::homeControl::StatusRequestCommand_StatusType >(value));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:homeControl.StatusRequestCommand)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:homeControl.StatusRequestCommand)
+  return false;
+#undef DO_
+}
+
+void StatusRequestCommand::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:homeControl.StatusRequestCommand)
+  // optional .homeControl.StatusRequestCommand.StatusType statusType = 1;
+  if (this->statustype() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->statustype(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:homeControl.StatusRequestCommand)
+}
+
+::google::protobuf::uint8* StatusRequestCommand::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:homeControl.StatusRequestCommand)
+  // optional .homeControl.StatusRequestCommand.StatusType statusType = 1;
+  if (this->statustype() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->statustype(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:homeControl.StatusRequestCommand)
+  return target;
+}
+
+int StatusRequestCommand::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.StatusRequestCommand)
+  int total_size = 0;
+
+  // optional .homeControl.StatusRequestCommand.StatusType statusType = 1;
+  if (this->statustype() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->statustype());
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void StatusRequestCommand::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.StatusRequestCommand)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const StatusRequestCommand* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const StatusRequestCommand>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.StatusRequestCommand)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.StatusRequestCommand)
+    MergeFrom(*source);
+  }
+}
+
+void StatusRequestCommand::MergeFrom(const StatusRequestCommand& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.StatusRequestCommand)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  if (from.statustype() != 0) {
+    set_statustype(from.statustype());
+  }
+}
+
+void StatusRequestCommand::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.StatusRequestCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void StatusRequestCommand::CopyFrom(const StatusRequestCommand& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.StatusRequestCommand)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StatusRequestCommand::IsInitialized() const {
+
+  return true;
+}
+
+void StatusRequestCommand::Swap(StatusRequestCommand* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void StatusRequestCommand::InternalSwap(StatusRequestCommand* other) {
+  std::swap(statustype_, other->statustype_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata StatusRequestCommand::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = StatusRequestCommand_descriptor_;
+  metadata.reflection = StatusRequestCommand_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// StatusRequestCommand
+
+// optional .homeControl.StatusRequestCommand.StatusType statusType = 1;
+void StatusRequestCommand::clear_statustype() {
+  statustype_ = 0;
+}
+ ::homeControl::StatusRequestCommand_StatusType StatusRequestCommand::statustype() const {
+  // @@protoc_insertion_point(field_get:homeControl.StatusRequestCommand.statusType)
+  return static_cast< ::homeControl::StatusRequestCommand_StatusType >(statustype_);
+}
+ void StatusRequestCommand::set_statustype(::homeControl::StatusRequestCommand_StatusType value) {
+  
+  statustype_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.StatusRequestCommand.statusType)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int HomeControlStatus::kElectricalFieldNumber;
+const int HomeControlStatus::kOutputsFieldNumber;
+const int HomeControlStatus::kInputsFieldNumber;
+const int HomeControlStatus::kDimmersFieldNumber;
+const int HomeControlStatus::kTemperaturesFieldNumber;
+const int HomeControlStatus::kUptimeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+HomeControlStatus::HomeControlStatus()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:homeControl.HomeControlStatus)
+}
+
+void HomeControlStatus::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+  electrical_ = const_cast< ::homeControl::ElectricalStatus*>(&::homeControl::ElectricalStatus::default_instance());
+}
+
+HomeControlStatus::HomeControlStatus(const HomeControlStatus& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:homeControl.HomeControlStatus)
+}
+
+void HomeControlStatus::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  electrical_ = NULL;
+  uptime_ = GOOGLE_ULONGLONG(0);
+}
+
+HomeControlStatus::~HomeControlStatus() {
+  // @@protoc_insertion_point(destructor:homeControl.HomeControlStatus)
+  SharedDtor();
+}
+
+void HomeControlStatus::SharedDtor() {
+  if (this != default_instance_) {
+    delete electrical_;
+  }
+}
+
+void HomeControlStatus::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* HomeControlStatus::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return HomeControlStatus_descriptor_;
+}
+
+const HomeControlStatus& HomeControlStatus::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_homeControl_2eproto();
+  return *default_instance_;
+}
+
+HomeControlStatus* HomeControlStatus::default_instance_ = NULL;
+
+HomeControlStatus* HomeControlStatus::New(::google::protobuf::Arena* arena) const {
+  HomeControlStatus* n = new HomeControlStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void HomeControlStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:homeControl.HomeControlStatus)
+  if (GetArenaNoVirtual() == NULL && electrical_ != NULL) delete electrical_;
+  electrical_ = NULL;
+  uptime_ = GOOGLE_ULONGLONG(0);
+  outputs_.Clear();
+  inputs_.Clear();
+  dimmers_.Clear();
+  temperatures_.Clear();
+}
+
+bool HomeControlStatus::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:homeControl.HomeControlStatus)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .homeControl.ElectricalStatus electrical = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_electrical()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_outputs;
+        break;
+      }
+
+      // repeated .homeControl.SwitchStatus outputs = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_outputs:
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_outputs:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+                input, add_outputs()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_loop_outputs;
+        if (input->ExpectTag(26)) goto parse_loop_inputs;
+        input->UnsafeDecrementRecursionDepth();
+        break;
+      }
+
+      // repeated .homeControl.SwitchStatus inputs = 3;
+      case 3: {
+        if (tag == 26) {
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_inputs:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+                input, add_inputs()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_loop_inputs;
+        if (input->ExpectTag(34)) goto parse_loop_dimmers;
+        input->UnsafeDecrementRecursionDepth();
+        break;
+      }
+
+      // repeated .homeControl.DimmerStatus dimmers = 4;
+      case 4: {
+        if (tag == 34) {
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_dimmers:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+                input, add_dimmers()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_loop_dimmers;
+        if (input->ExpectTag(42)) goto parse_loop_temperatures;
+        input->UnsafeDecrementRecursionDepth();
+        break;
+      }
+
+      // repeated .homeControl.TemperatureStatus temperatures = 5;
+      case 5: {
+        if (tag == 42) {
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_temperatures:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+                input, add_temperatures()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_loop_temperatures;
+        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(48)) goto parse_uptime;
+        break;
+      }
+
+      // optional uint64 uptime = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_uptime:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &uptime_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:homeControl.HomeControlStatus)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:homeControl.HomeControlStatus)
+  return false;
+#undef DO_
+}
+
+void HomeControlStatus::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:homeControl.HomeControlStatus)
+  // optional .homeControl.ElectricalStatus electrical = 1;
+  if (this->has_electrical()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->electrical_, output);
+  }
+
+  // repeated .homeControl.SwitchStatus outputs = 2;
+  for (unsigned int i = 0, n = this->outputs_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->outputs(i), output);
+  }
+
+  // repeated .homeControl.SwitchStatus inputs = 3;
+  for (unsigned int i = 0, n = this->inputs_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->inputs(i), output);
+  }
+
+  // repeated .homeControl.DimmerStatus dimmers = 4;
+  for (unsigned int i = 0, n = this->dimmers_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->dimmers(i), output);
+  }
+
+  // repeated .homeControl.TemperatureStatus temperatures = 5;
+  for (unsigned int i = 0, n = this->temperatures_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->temperatures(i), output);
+  }
+
+  // optional uint64 uptime = 6;
+  if (this->uptime() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(6, this->uptime(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:homeControl.HomeControlStatus)
+}
+
+::google::protobuf::uint8* HomeControlStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:homeControl.HomeControlStatus)
+  // optional .homeControl.ElectricalStatus electrical = 1;
+  if (this->has_electrical()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->electrical_, false, target);
+  }
+
+  // repeated .homeControl.SwitchStatus outputs = 2;
+  for (unsigned int i = 0, n = this->outputs_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, this->outputs(i), false, target);
+  }
+
+  // repeated .homeControl.SwitchStatus inputs = 3;
+  for (unsigned int i = 0, n = this->inputs_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        3, this->inputs(i), false, target);
+  }
+
+  // repeated .homeControl.DimmerStatus dimmers = 4;
+  for (unsigned int i = 0, n = this->dimmers_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        4, this->dimmers(i), false, target);
+  }
+
+  // repeated .homeControl.TemperatureStatus temperatures = 5;
+  for (unsigned int i = 0, n = this->temperatures_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        5, this->temperatures(i), false, target);
+  }
+
+  // optional uint64 uptime = 6;
+  if (this->uptime() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(6, this->uptime(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:homeControl.HomeControlStatus)
+  return target;
+}
+
+int HomeControlStatus::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.HomeControlStatus)
+  int total_size = 0;
+
+  // optional .homeControl.ElectricalStatus electrical = 1;
+  if (this->has_electrical()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->electrical_);
+  }
+
+  // optional uint64 uptime = 6;
+  if (this->uptime() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->uptime());
+  }
+
+  // repeated .homeControl.SwitchStatus outputs = 2;
+  total_size += 1 * this->outputs_size();
+  for (int i = 0; i < this->outputs_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->outputs(i));
+  }
+
+  // repeated .homeControl.SwitchStatus inputs = 3;
+  total_size += 1 * this->inputs_size();
+  for (int i = 0; i < this->inputs_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->inputs(i));
+  }
+
+  // repeated .homeControl.DimmerStatus dimmers = 4;
+  total_size += 1 * this->dimmers_size();
+  for (int i = 0; i < this->dimmers_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->dimmers(i));
+  }
+
+  // repeated .homeControl.TemperatureStatus temperatures = 5;
+  total_size += 1 * this->temperatures_size();
+  for (int i = 0; i < this->temperatures_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->temperatures(i));
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void HomeControlStatus::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.HomeControlStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const HomeControlStatus* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const HomeControlStatus>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.HomeControlStatus)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.HomeControlStatus)
+    MergeFrom(*source);
+  }
+}
+
+void HomeControlStatus::MergeFrom(const HomeControlStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.HomeControlStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  outputs_.MergeFrom(from.outputs_);
+  inputs_.MergeFrom(from.inputs_);
+  dimmers_.MergeFrom(from.dimmers_);
+  temperatures_.MergeFrom(from.temperatures_);
+  if (from.has_electrical()) {
+    mutable_electrical()->::homeControl::ElectricalStatus::MergeFrom(from.electrical());
+  }
+  if (from.uptime() != 0) {
+    set_uptime(from.uptime());
+  }
+}
+
+void HomeControlStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.HomeControlStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void HomeControlStatus::CopyFrom(const HomeControlStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.HomeControlStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HomeControlStatus::IsInitialized() const {
+
+  return true;
+}
+
+void HomeControlStatus::Swap(HomeControlStatus* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void HomeControlStatus::InternalSwap(HomeControlStatus* other) {
+  std::swap(electrical_, other->electrical_);
+  outputs_.UnsafeArenaSwap(&other->outputs_);
+  inputs_.UnsafeArenaSwap(&other->inputs_);
+  dimmers_.UnsafeArenaSwap(&other->dimmers_);
+  temperatures_.UnsafeArenaSwap(&other->temperatures_);
+  std::swap(uptime_, other->uptime_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata HomeControlStatus::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = HomeControlStatus_descriptor_;
+  metadata.reflection = HomeControlStatus_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// HomeControlStatus
+
+// optional .homeControl.ElectricalStatus electrical = 1;
+bool HomeControlStatus::has_electrical() const {
+  return !_is_default_instance_ && electrical_ != NULL;
+}
+void HomeControlStatus::clear_electrical() {
+  if (GetArenaNoVirtual() == NULL && electrical_ != NULL) delete electrical_;
+  electrical_ = NULL;
+}
+const ::homeControl::ElectricalStatus& HomeControlStatus::electrical() const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlStatus.electrical)
+  return electrical_ != NULL ? *electrical_ : *default_instance_->electrical_;
+}
+::homeControl::ElectricalStatus* HomeControlStatus::mutable_electrical() {
+  
+  if (electrical_ == NULL) {
+    electrical_ = new ::homeControl::ElectricalStatus;
+  }
+  // @@protoc_insertion_point(field_mutable:homeControl.HomeControlStatus.electrical)
+  return electrical_;
+}
+::homeControl::ElectricalStatus* HomeControlStatus::release_electrical() {
+  // @@protoc_insertion_point(field_release:homeControl.HomeControlStatus.electrical)
+  
+  ::homeControl::ElectricalStatus* temp = electrical_;
+  electrical_ = NULL;
+  return temp;
+}
+void HomeControlStatus::set_allocated_electrical(::homeControl::ElectricalStatus* electrical) {
+  delete electrical_;
+  electrical_ = electrical;
+  if (electrical) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:homeControl.HomeControlStatus.electrical)
+}
+
+// repeated .homeControl.SwitchStatus outputs = 2;
+int HomeControlStatus::outputs_size() const {
+  return outputs_.size();
+}
+void HomeControlStatus::clear_outputs() {
+  outputs_.Clear();
+}
+const ::homeControl::SwitchStatus& HomeControlStatus::outputs(int index) const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlStatus.outputs)
+  return outputs_.Get(index);
+}
+::homeControl::SwitchStatus* HomeControlStatus::mutable_outputs(int index) {
+  // @@protoc_insertion_point(field_mutable:homeControl.HomeControlStatus.outputs)
+  return outputs_.Mutable(index);
+}
+::homeControl::SwitchStatus* HomeControlStatus::add_outputs() {
+  // @@protoc_insertion_point(field_add:homeControl.HomeControlStatus.outputs)
+  return outputs_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::homeControl::SwitchStatus >*
+HomeControlStatus::mutable_outputs() {
+  // @@protoc_insertion_point(field_mutable_list:homeControl.HomeControlStatus.outputs)
+  return &outputs_;
+}
+const ::google::protobuf::RepeatedPtrField< ::homeControl::SwitchStatus >&
+HomeControlStatus::outputs() const {
+  // @@protoc_insertion_point(field_list:homeControl.HomeControlStatus.outputs)
+  return outputs_;
+}
+
+// repeated .homeControl.SwitchStatus inputs = 3;
+int HomeControlStatus::inputs_size() const {
+  return inputs_.size();
+}
+void HomeControlStatus::clear_inputs() {
+  inputs_.Clear();
+}
+const ::homeControl::SwitchStatus& HomeControlStatus::inputs(int index) const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlStatus.inputs)
+  return inputs_.Get(index);
+}
+::homeControl::SwitchStatus* HomeControlStatus::mutable_inputs(int index) {
+  // @@protoc_insertion_point(field_mutable:homeControl.HomeControlStatus.inputs)
+  return inputs_.Mutable(index);
+}
+::homeControl::SwitchStatus* HomeControlStatus::add_inputs() {
+  // @@protoc_insertion_point(field_add:homeControl.HomeControlStatus.inputs)
+  return inputs_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::homeControl::SwitchStatus >*
+HomeControlStatus::mutable_inputs() {
+  // @@protoc_insertion_point(field_mutable_list:homeControl.HomeControlStatus.inputs)
+  return &inputs_;
+}
+const ::google::protobuf::RepeatedPtrField< ::homeControl::SwitchStatus >&
+HomeControlStatus::inputs() const {
+  // @@protoc_insertion_point(field_list:homeControl.HomeControlStatus.inputs)
+  return inputs_;
+}
+
+// repeated .homeControl.DimmerStatus dimmers = 4;
+int HomeControlStatus::dimmers_size() const {
+  return dimmers_.size();
+}
+void HomeControlStatus::clear_dimmers() {
+  dimmers_.Clear();
+}
+const ::homeControl::DimmerStatus& HomeControlStatus::dimmers(int index) const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlStatus.dimmers)
+  return dimmers_.Get(index);
+}
+::homeControl::DimmerStatus* HomeControlStatus::mutable_dimmers(int index) {
+  // @@protoc_insertion_point(field_mutable:homeControl.HomeControlStatus.dimmers)
+  return dimmers_.Mutable(index);
+}
+::homeControl::DimmerStatus* HomeControlStatus::add_dimmers() {
+  // @@protoc_insertion_point(field_add:homeControl.HomeControlStatus.dimmers)
+  return dimmers_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::homeControl::DimmerStatus >*
+HomeControlStatus::mutable_dimmers() {
+  // @@protoc_insertion_point(field_mutable_list:homeControl.HomeControlStatus.dimmers)
+  return &dimmers_;
+}
+const ::google::protobuf::RepeatedPtrField< ::homeControl::DimmerStatus >&
+HomeControlStatus::dimmers() const {
+  // @@protoc_insertion_point(field_list:homeControl.HomeControlStatus.dimmers)
+  return dimmers_;
+}
+
+// repeated .homeControl.TemperatureStatus temperatures = 5;
+int HomeControlStatus::temperatures_size() const {
+  return temperatures_.size();
+}
+void HomeControlStatus::clear_temperatures() {
+  temperatures_.Clear();
+}
+const ::homeControl::TemperatureStatus& HomeControlStatus::temperatures(int index) const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlStatus.temperatures)
+  return temperatures_.Get(index);
+}
+::homeControl::TemperatureStatus* HomeControlStatus::mutable_temperatures(int index) {
+  // @@protoc_insertion_point(field_mutable:homeControl.HomeControlStatus.temperatures)
+  return temperatures_.Mutable(index);
+}
+::homeControl::TemperatureStatus* HomeControlStatus::add_temperatures() {
+  // @@protoc_insertion_point(field_add:homeControl.HomeControlStatus.temperatures)
+  return temperatures_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::homeControl::TemperatureStatus >*
+HomeControlStatus::mutable_temperatures() {
+  // @@protoc_insertion_point(field_mutable_list:homeControl.HomeControlStatus.temperatures)
+  return &temperatures_;
+}
+const ::google::protobuf::RepeatedPtrField< ::homeControl::TemperatureStatus >&
+HomeControlStatus::temperatures() const {
+  // @@protoc_insertion_point(field_list:homeControl.HomeControlStatus.temperatures)
+  return temperatures_;
+}
+
+// optional uint64 uptime = 6;
+void HomeControlStatus::clear_uptime() {
+  uptime_ = GOOGLE_ULONGLONG(0);
+}
+ ::google::protobuf::uint64 HomeControlStatus::uptime() const {
+  // @@protoc_insertion_point(field_get:homeControl.HomeControlStatus.uptime)
+  return uptime_;
+}
+ void HomeControlStatus::set_uptime(::google::protobuf::uint64 value) {
+  
+  uptime_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.HomeControlStatus.uptime)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int ElectricalStatus::kVoltsFieldNumber;
+const int ElectricalStatus::kAmpsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ElectricalStatus::ElectricalStatus()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:homeControl.ElectricalStatus)
+}
+
+void ElectricalStatus::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+}
+
+ElectricalStatus::ElectricalStatus(const ElectricalStatus& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:homeControl.ElectricalStatus)
+}
+
+void ElectricalStatus::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  volts_ = 0;
+  amps_ = 0;
+}
+
+ElectricalStatus::~ElectricalStatus() {
+  // @@protoc_insertion_point(destructor:homeControl.ElectricalStatus)
+  SharedDtor();
+}
+
+void ElectricalStatus::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void ElectricalStatus::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ElectricalStatus::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ElectricalStatus_descriptor_;
+}
+
+const ElectricalStatus& ElectricalStatus::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_homeControl_2eproto();
+  return *default_instance_;
+}
+
+ElectricalStatus* ElectricalStatus::default_instance_ = NULL;
+
+ElectricalStatus* ElectricalStatus::New(::google::protobuf::Arena* arena) const {
+  ElectricalStatus* n = new ElectricalStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void ElectricalStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:homeControl.ElectricalStatus)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(ElectricalStatus, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<ElectricalStatus*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(volts_, amps_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+}
+
+bool ElectricalStatus::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:homeControl.ElectricalStatus)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional double volts = 1;
+      case 1: {
+        if (tag == 9) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &volts_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(17)) goto parse_amps;
+        break;
+      }
+
+      // optional double amps = 2;
+      case 2: {
+        if (tag == 17) {
+         parse_amps:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &amps_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:homeControl.ElectricalStatus)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:homeControl.ElectricalStatus)
+  return false;
+#undef DO_
+}
+
+void ElectricalStatus::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:homeControl.ElectricalStatus)
+  // optional double volts = 1;
+  if (this->volts() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->volts(), output);
+  }
+
+  // optional double amps = 2;
+  if (this->amps() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->amps(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:homeControl.ElectricalStatus)
+}
+
+::google::protobuf::uint8* ElectricalStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:homeControl.ElectricalStatus)
+  // optional double volts = 1;
+  if (this->volts() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->volts(), target);
+  }
+
+  // optional double amps = 2;
+  if (this->amps() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->amps(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:homeControl.ElectricalStatus)
+  return target;
+}
+
+int ElectricalStatus::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.ElectricalStatus)
+  int total_size = 0;
+
+  // optional double volts = 1;
+  if (this->volts() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // optional double amps = 2;
+  if (this->amps() != 0) {
+    total_size += 1 + 8;
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ElectricalStatus::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.ElectricalStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const ElectricalStatus* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const ElectricalStatus>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.ElectricalStatus)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.ElectricalStatus)
+    MergeFrom(*source);
+  }
+}
+
+void ElectricalStatus::MergeFrom(const ElectricalStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.ElectricalStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  if (from.volts() != 0) {
+    set_volts(from.volts());
+  }
+  if (from.amps() != 0) {
+    set_amps(from.amps());
+  }
+}
+
+void ElectricalStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.ElectricalStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ElectricalStatus::CopyFrom(const ElectricalStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.ElectricalStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ElectricalStatus::IsInitialized() const {
+
+  return true;
+}
+
+void ElectricalStatus::Swap(ElectricalStatus* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ElectricalStatus::InternalSwap(ElectricalStatus* other) {
+  std::swap(volts_, other->volts_);
+  std::swap(amps_, other->amps_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata ElectricalStatus::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = ElectricalStatus_descriptor_;
+  metadata.reflection = ElectricalStatus_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// ElectricalStatus
+
+// optional double volts = 1;
+void ElectricalStatus::clear_volts() {
+  volts_ = 0;
+}
+ double ElectricalStatus::volts() const {
+  // @@protoc_insertion_point(field_get:homeControl.ElectricalStatus.volts)
+  return volts_;
+}
+ void ElectricalStatus::set_volts(double value) {
+  
+  volts_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.ElectricalStatus.volts)
+}
+
+// optional double amps = 2;
+void ElectricalStatus::clear_amps() {
+  amps_ = 0;
+}
+ double ElectricalStatus::amps() const {
+  // @@protoc_insertion_point(field_get:homeControl.ElectricalStatus.amps)
+  return amps_;
+}
+ void ElectricalStatus::set_amps(double value) {
+  
+  amps_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.ElectricalStatus.amps)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SwitchStatus::kChannelFieldNumber;
+const int SwitchStatus::kStateFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SwitchStatus::SwitchStatus()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:homeControl.SwitchStatus)
+}
+
+void SwitchStatus::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+}
+
+SwitchStatus::SwitchStatus(const SwitchStatus& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:homeControl.SwitchStatus)
+}
+
+void SwitchStatus::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  channel_ = 0;
+  state_ = false;
+}
+
+SwitchStatus::~SwitchStatus() {
+  // @@protoc_insertion_point(destructor:homeControl.SwitchStatus)
+  SharedDtor();
+}
+
+void SwitchStatus::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void SwitchStatus::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* SwitchStatus::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return SwitchStatus_descriptor_;
+}
+
+const SwitchStatus& SwitchStatus::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_homeControl_2eproto();
+  return *default_instance_;
+}
+
+SwitchStatus* SwitchStatus::default_instance_ = NULL;
+
+SwitchStatus* SwitchStatus::New(::google::protobuf::Arena* arena) const {
+  SwitchStatus* n = new SwitchStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void SwitchStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:homeControl.SwitchStatus)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(SwitchStatus, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<SwitchStatus*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(channel_, state_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+}
+
+bool SwitchStatus::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:homeControl.SwitchStatus)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 channel = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &channel_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_state;
+        break;
+      }
+
+      // optional bool state = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_state:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &state_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:homeControl.SwitchStatus)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:homeControl.SwitchStatus)
+  return false;
+#undef DO_
+}
+
+void SwitchStatus::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:homeControl.SwitchStatus)
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->channel(), output);
+  }
+
+  // optional bool state = 2;
+  if (this->state() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->state(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:homeControl.SwitchStatus)
+}
+
+::google::protobuf::uint8* SwitchStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:homeControl.SwitchStatus)
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->channel(), target);
+  }
+
+  // optional bool state = 2;
+  if (this->state() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->state(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:homeControl.SwitchStatus)
+  return target;
+}
+
+int SwitchStatus::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.SwitchStatus)
+  int total_size = 0;
+
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->channel());
+  }
+
+  // optional bool state = 2;
+  if (this->state() != 0) {
+    total_size += 1 + 1;
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void SwitchStatus::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.SwitchStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const SwitchStatus* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const SwitchStatus>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.SwitchStatus)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.SwitchStatus)
+    MergeFrom(*source);
+  }
+}
+
+void SwitchStatus::MergeFrom(const SwitchStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.SwitchStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  if (from.channel() != 0) {
+    set_channel(from.channel());
+  }
+  if (from.state() != 0) {
+    set_state(from.state());
+  }
+}
+
+void SwitchStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.SwitchStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SwitchStatus::CopyFrom(const SwitchStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.SwitchStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SwitchStatus::IsInitialized() const {
+
+  return true;
+}
+
+void SwitchStatus::Swap(SwitchStatus* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SwitchStatus::InternalSwap(SwitchStatus* other) {
+  std::swap(channel_, other->channel_);
+  std::swap(state_, other->state_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata SwitchStatus::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = SwitchStatus_descriptor_;
+  metadata.reflection = SwitchStatus_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// SwitchStatus
+
+// optional int32 channel = 1;
+void SwitchStatus::clear_channel() {
+  channel_ = 0;
+}
+ ::google::protobuf::int32 SwitchStatus::channel() const {
+  // @@protoc_insertion_point(field_get:homeControl.SwitchStatus.channel)
+  return channel_;
+}
+ void SwitchStatus::set_channel(::google::protobuf::int32 value) {
+  
+  channel_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.SwitchStatus.channel)
+}
+
+// optional bool state = 2;
+void SwitchStatus::clear_state() {
+  state_ = false;
+}
+ bool SwitchStatus::state() const {
+  // @@protoc_insertion_point(field_get:homeControl.SwitchStatus.state)
+  return state_;
+}
+ void SwitchStatus::set_state(bool value) {
+  
+  state_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.SwitchStatus.state)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DimmerStatus::kChannelFieldNumber;
+const int DimmerStatus::kDemandLevelFieldNumber;
+const int DimmerStatus::kActualLevelFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+DimmerStatus::DimmerStatus()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:homeControl.DimmerStatus)
+}
+
+void DimmerStatus::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+}
+
+DimmerStatus::DimmerStatus(const DimmerStatus& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:homeControl.DimmerStatus)
+}
+
+void DimmerStatus::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  channel_ = 0;
+  demandlevel_ = 0;
+  actuallevel_ = 0;
+}
+
+DimmerStatus::~DimmerStatus() {
+  // @@protoc_insertion_point(destructor:homeControl.DimmerStatus)
+  SharedDtor();
+}
+
+void DimmerStatus::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void DimmerStatus::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* DimmerStatus::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return DimmerStatus_descriptor_;
+}
+
+const DimmerStatus& DimmerStatus::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_homeControl_2eproto();
+  return *default_instance_;
+}
+
+DimmerStatus* DimmerStatus::default_instance_ = NULL;
+
+DimmerStatus* DimmerStatus::New(::google::protobuf::Arena* arena) const {
+  DimmerStatus* n = new DimmerStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void DimmerStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:homeControl.DimmerStatus)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(DimmerStatus, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<DimmerStatus*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(channel_, actuallevel_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+}
+
+bool DimmerStatus::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:homeControl.DimmerStatus)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 channel = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &channel_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_demandLevel;
+        break;
+      }
+
+      // optional int32 demandLevel = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_demandLevel:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &demandlevel_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_actualLevel;
+        break;
+      }
+
+      // optional int32 actualLevel = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_actualLevel:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &actuallevel_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:homeControl.DimmerStatus)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:homeControl.DimmerStatus)
+  return false;
+#undef DO_
+}
+
+void DimmerStatus::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:homeControl.DimmerStatus)
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->channel(), output);
+  }
+
+  // optional int32 demandLevel = 2;
+  if (this->demandlevel() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->demandlevel(), output);
+  }
+
+  // optional int32 actualLevel = 3;
+  if (this->actuallevel() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->actuallevel(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:homeControl.DimmerStatus)
+}
+
+::google::protobuf::uint8* DimmerStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:homeControl.DimmerStatus)
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->channel(), target);
+  }
+
+  // optional int32 demandLevel = 2;
+  if (this->demandlevel() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->demandlevel(), target);
+  }
+
+  // optional int32 actualLevel = 3;
+  if (this->actuallevel() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->actuallevel(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:homeControl.DimmerStatus)
+  return target;
+}
+
+int DimmerStatus::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.DimmerStatus)
+  int total_size = 0;
+
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->channel());
+  }
+
+  // optional int32 demandLevel = 2;
+  if (this->demandlevel() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->demandlevel());
+  }
+
+  // optional int32 actualLevel = 3;
+  if (this->actuallevel() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->actuallevel());
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void DimmerStatus::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.DimmerStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const DimmerStatus* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const DimmerStatus>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.DimmerStatus)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.DimmerStatus)
+    MergeFrom(*source);
+  }
+}
+
+void DimmerStatus::MergeFrom(const DimmerStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.DimmerStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  if (from.channel() != 0) {
+    set_channel(from.channel());
+  }
+  if (from.demandlevel() != 0) {
+    set_demandlevel(from.demandlevel());
+  }
+  if (from.actuallevel() != 0) {
+    set_actuallevel(from.actuallevel());
+  }
+}
+
+void DimmerStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.DimmerStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DimmerStatus::CopyFrom(const DimmerStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.DimmerStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DimmerStatus::IsInitialized() const {
+
+  return true;
+}
+
+void DimmerStatus::Swap(DimmerStatus* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DimmerStatus::InternalSwap(DimmerStatus* other) {
+  std::swap(channel_, other->channel_);
+  std::swap(demandlevel_, other->demandlevel_);
+  std::swap(actuallevel_, other->actuallevel_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata DimmerStatus::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = DimmerStatus_descriptor_;
+  metadata.reflection = DimmerStatus_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// DimmerStatus
+
+// optional int32 channel = 1;
+void DimmerStatus::clear_channel() {
+  channel_ = 0;
+}
+ ::google::protobuf::int32 DimmerStatus::channel() const {
+  // @@protoc_insertion_point(field_get:homeControl.DimmerStatus.channel)
+  return channel_;
+}
+ void DimmerStatus::set_channel(::google::protobuf::int32 value) {
+  
+  channel_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.DimmerStatus.channel)
+}
+
+// optional int32 demandLevel = 2;
+void DimmerStatus::clear_demandlevel() {
+  demandlevel_ = 0;
+}
+ ::google::protobuf::int32 DimmerStatus::demandlevel() const {
+  // @@protoc_insertion_point(field_get:homeControl.DimmerStatus.demandLevel)
+  return demandlevel_;
+}
+ void DimmerStatus::set_demandlevel(::google::protobuf::int32 value) {
+  
+  demandlevel_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.DimmerStatus.demandLevel)
+}
+
+// optional int32 actualLevel = 3;
+void DimmerStatus::clear_actuallevel() {
+  actuallevel_ = 0;
+}
+ ::google::protobuf::int32 DimmerStatus::actuallevel() const {
+  // @@protoc_insertion_point(field_get:homeControl.DimmerStatus.actualLevel)
+  return actuallevel_;
+}
+ void DimmerStatus::set_actuallevel(::google::protobuf::int32 value) {
+  
+  actuallevel_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.DimmerStatus.actualLevel)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int TemperatureStatus::kChannelFieldNumber;
+const int TemperatureStatus::kTemperatureC00FieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+TemperatureStatus::TemperatureStatus()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:homeControl.TemperatureStatus)
+}
+
+void TemperatureStatus::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+}
+
+TemperatureStatus::TemperatureStatus(const TemperatureStatus& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:homeControl.TemperatureStatus)
+}
+
+void TemperatureStatus::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  channel_ = 0;
+  temperaturec00_ = 0;
+}
+
+TemperatureStatus::~TemperatureStatus() {
+  // @@protoc_insertion_point(destructor:homeControl.TemperatureStatus)
+  SharedDtor();
+}
+
+void TemperatureStatus::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void TemperatureStatus::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TemperatureStatus::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TemperatureStatus_descriptor_;
+}
+
+const TemperatureStatus& TemperatureStatus::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_homeControl_2eproto();
+  return *default_instance_;
+}
+
+TemperatureStatus* TemperatureStatus::default_instance_ = NULL;
+
+TemperatureStatus* TemperatureStatus::New(::google::protobuf::Arena* arena) const {
+  TemperatureStatus* n = new TemperatureStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void TemperatureStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:homeControl.TemperatureStatus)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(TemperatureStatus, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<TemperatureStatus*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(channel_, temperaturec00_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+}
+
+bool TemperatureStatus::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:homeControl.TemperatureStatus)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 channel = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &channel_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_TemperatureC00;
+        break;
+      }
+
+      // optional int32 TemperatureC00 = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_TemperatureC00:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &temperaturec00_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:homeControl.TemperatureStatus)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:homeControl.TemperatureStatus)
+  return false;
+#undef DO_
+}
+
+void TemperatureStatus::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:homeControl.TemperatureStatus)
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->channel(), output);
+  }
+
+  // optional int32 TemperatureC00 = 2;
+  if (this->temperaturec00() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->temperaturec00(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:homeControl.TemperatureStatus)
+}
+
+::google::protobuf::uint8* TemperatureStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:homeControl.TemperatureStatus)
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->channel(), target);
+  }
+
+  // optional int32 TemperatureC00 = 2;
+  if (this->temperaturec00() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->temperaturec00(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:homeControl.TemperatureStatus)
+  return target;
+}
+
+int TemperatureStatus::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:homeControl.TemperatureStatus)
+  int total_size = 0;
+
+  // optional int32 channel = 1;
+  if (this->channel() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->channel());
+  }
+
+  // optional int32 TemperatureC00 = 2;
+  if (this->temperaturec00() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->temperaturec00());
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TemperatureStatus::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:homeControl.TemperatureStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const TemperatureStatus* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const TemperatureStatus>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:homeControl.TemperatureStatus)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:homeControl.TemperatureStatus)
+    MergeFrom(*source);
+  }
+}
+
+void TemperatureStatus::MergeFrom(const TemperatureStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:homeControl.TemperatureStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  if (from.channel() != 0) {
+    set_channel(from.channel());
+  }
+  if (from.temperaturec00() != 0) {
+    set_temperaturec00(from.temperaturec00());
+  }
+}
+
+void TemperatureStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:homeControl.TemperatureStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TemperatureStatus::CopyFrom(const TemperatureStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:homeControl.TemperatureStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TemperatureStatus::IsInitialized() const {
+
+  return true;
+}
+
+void TemperatureStatus::Swap(TemperatureStatus* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void TemperatureStatus::InternalSwap(TemperatureStatus* other) {
+  std::swap(channel_, other->channel_);
+  std::swap(temperaturec00_, other->temperaturec00_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata TemperatureStatus::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TemperatureStatus_descriptor_;
+  metadata.reflection = TemperatureStatus_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// TemperatureStatus
+
+// optional int32 channel = 1;
+void TemperatureStatus::clear_channel() {
+  channel_ = 0;
+}
+ ::google::protobuf::int32 TemperatureStatus::channel() const {
+  // @@protoc_insertion_point(field_get:homeControl.TemperatureStatus.channel)
+  return channel_;
+}
+ void TemperatureStatus::set_channel(::google::protobuf::int32 value) {
+  
+  channel_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.TemperatureStatus.channel)
+}
+
+// optional int32 TemperatureC00 = 2;
+void TemperatureStatus::clear_temperaturec00() {
+  temperaturec00_ = 0;
+}
+ ::google::protobuf::int32 TemperatureStatus::temperaturec00() const {
+  // @@protoc_insertion_point(field_get:homeControl.TemperatureStatus.TemperatureC00)
+  return temperaturec00_;
+}
+ void TemperatureStatus::set_temperaturec00(::google::protobuf::int32 value) {
+  
+  temperaturec00_ = value;
+  // @@protoc_insertion_point(field_set:homeControl.TemperatureStatus.TemperatureC00)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
